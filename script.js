@@ -1,17 +1,15 @@
 const mainImage = document.getElementById('mainImage');
 const circleImage = document.getElementById('circleImage');
-const infoBox = document.getElementById('infoBox');
 
-// Function to update zoomed view
+// Zoom factor: Controls the level of zoom
+const zoomFactor = 3;
+const circleSize = 200;  // Size of the zoomed area (100px)
+// Dynamically calculate the source area of the main image to zoom into
+const sourceWidth = circleSize / zoomFactor; 
+const sourceHeight = circleSize / zoomFactor;
+
+// Function to update zoomed view and position circular image
 function updateZoomedView(x, y) {
-  // Dynamically get size from the circular image
-  const circleWidth = circleImage.offsetWidth;  // Use offsetWidth for actual rendered size
-  const circleHeight = circleImage.offsetHeight;  // Use offsetHeight for actual rendered size
-
-  // 3x zoom, the zoomed region will be 100px by 100px
-  const zoomFactor = 3;
-  const sourceWidth = 100;  // Fixed 100px to crop around the mouse
-  const sourceHeight = 100;
 
   // Round off values to avoid fractional pixels
   let roundedX = Math.round(x);
@@ -34,31 +32,32 @@ function updateZoomedView(x, y) {
   circleImage.style.backgroundSize = `${imageWidth * zoomFactor}px ${imageHeight * zoomFactor}px`;
   circleImage.style.backgroundPosition = `-${sourceX * zoomFactor}px -${sourceY * zoomFactor}px`;
   circleImage.style.backgroundRepeat = 'no-repeat';
+
+  // Set the circular image size and position based on mouse coordinates
+  circleImage.style.width = `${circleSize}px`;
+  circleImage.style.height = `${circleSize}px`;
+  const circlePosX = Math.round(x - circleSize / 2);
+  const circlePosY = Math.round(y - circleSize / 2);
+
+  // Update the position of the circular image
+  circleImage.style.left = `${circlePosX}px`;
+  circleImage.style.top = `${circlePosY}px`;
+
+  // Show the circular image when updating zoomed view
+  circleImage.style.display = 'block';
 }
-
-// Event to get image dimensions after it's fully loaded
-mainImage.addEventListener('load', () => {
-  const imgWidth = mainImage.naturalWidth;
-  const imgHeight = mainImage.naturalHeight;
-
-  // Call the update function with the center of the image initially
-  updateZoomedView(imgWidth / 2, imgHeight / 2);
-});
 
 // Mouse move handler to track coordinates and update the zoomed view
 mainImage.addEventListener('mousemove', (event) => {
   const rect = mainImage.getBoundingClientRect();
-  
-  const x = Math.round(event.clientX - rect.left);
-  const y = Math.round(event.clientY - rect.top);
-
-  infoBox.value = `X: ${Math.max(0, x)}, Y: ${Math.max(0, y)}`;
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
 
   // Update zoomed view based on mouse position
   updateZoomedView(x, y);
 });
 
-// Reset info box when the mouse leaves the image area
+// Hide the circular image when mouse leaves the main image
 mainImage.addEventListener('mouseleave', () => {
-  infoBox.value = '';
+  circleImage.style.display = 'none';
 });
