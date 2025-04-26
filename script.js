@@ -2,33 +2,34 @@ const mainImage = document.getElementById('mainImage');
 const circleImage = document.getElementById('circleImage');
 
 // Zoom factor: Controls the level of zoom
-const zoomFactor = 3;
-const circleSize = 200;  // Size of the zoomed area (100px)
-// Dynamically calculate the source area of the main image to zoom into
+const zoomFactor = 5;
+const circleSize = 200;  // Size of the zoomed area (200px is the size of the circle)
 const sourceWidth = circleSize / zoomFactor; 
 const sourceHeight = circleSize / zoomFactor;
 
+// Cache image dimensions to avoid recalculating during each mouse move
+const imageWidth = mainImage.width;
+const imageHeight = mainImage.height;
+
+// Set background image for the circle once
+const imageSrc = mainImage.src;
+
 // Function to update zoomed view and position circular image
 function updateZoomedView(x, y) {
-
   // Round off values to avoid fractional pixels
   let roundedX = Math.round(x);
   let roundedY = Math.round(y);
 
-  // Ensure the values do not go out of the bounds of the image
-  const imageWidth = mainImage.width;
-  const imageHeight = mainImage.height;
-
-  // Clamp the coordinates to be within the image bounds
+  // Clamp the coordinates to ensure they stay within image bounds
   roundedX = Math.max(sourceWidth / 2, Math.min(imageWidth - sourceWidth / 2, roundedX));
   roundedY = Math.max(sourceHeight / 2, Math.min(imageHeight - sourceHeight / 2, roundedY));
 
-  // Calculate the source area to zoom into
+  // Calculate the source area to zoom into, so the center of the circle is at (x, y)
   const sourceX = roundedX - sourceWidth / 2;
   const sourceY = roundedY - sourceHeight / 2;
 
-  // Set the circular image's background size and position for zoom effect
-  circleImage.style.backgroundImage = `url(${mainImage.src})`;
+  // Set the circular image's background properties for zoom effect
+  circleImage.style.backgroundImage = `url(${imageSrc})`;
   circleImage.style.backgroundSize = `${imageWidth * zoomFactor}px ${imageHeight * zoomFactor}px`;
   circleImage.style.backgroundPosition = `-${sourceX * zoomFactor}px -${sourceY * zoomFactor}px`;
   circleImage.style.backgroundRepeat = 'no-repeat';
@@ -53,7 +54,6 @@ mainImage.addEventListener('mousemove', (event) => {
   const x = event.clientX - rect.left;
   const y = event.clientY - rect.top;
 
-  // Update zoomed view based on mouse position
   updateZoomedView(x, y);
 });
 
