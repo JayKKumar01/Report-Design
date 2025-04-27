@@ -1,12 +1,9 @@
 /* Middle content section */
 .middle-content {
     flex: 1; 
-    padding: 20px; 
-    background-color: #f0f0f0; 
     overflow-y: auto;
     display: flex; /* Make sure middle-content itself is a flex container */
     flex-direction: column; /* Stack content-div and alignment-div vertically */
-    gap: 20px; /* Add some space between child divs (content-div and alignment-div) */
 }
 
 

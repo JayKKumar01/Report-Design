@@ -13,13 +13,10 @@
 .image-container {
     width: 66.66%; /* Fixed width 2/3 of the container */
     height: 100%; /* Full height of its parent container */
-    background-color: #e0f7fa;
-    border: 1px solid #00796b;
     display: block;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    box-sizing: border-box; /* Include border in width and height */
 }
 
 /* Image to fit in the container */
@@ -39,11 +36,8 @@
 .report-container {
     width: 33.33%; /* Fixed width 1/3 of the container */
     height: 100%; /* Full height of its parent container */
-    background-color: #f1f8e9;
-    border: 1px solid #388e3c;
     display: block;
     justify-content: flex-start; /* Align from top */
-    box-sizing: border-box; /* Include border in width and height */
     overflow-y: auto; /* Enable vertical scrolling */
 }
 
