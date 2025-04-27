@@ -10,6 +10,7 @@ contentValidationBtn.addEventListener('click', () => {
     alignmentDiv.style.display = 'none';
     contentValidationBtn.classList.add('selected');
     alignmentValidationBtn.classList.remove('selected');
+    updateImageProperties();
 });
 
 // Function to show Alignment Validation

@@ -14,7 +14,7 @@
 .image-container {
     width: 66.66%; /* Fixed width 2/3 of the container */
     height: 100%; /* Full height of its parent container */
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -22,9 +22,10 @@
 
 /* Image to fit in the container */
 #mainImage {
-    width: 100%; /* Ensure the image fits container width */
+    max-width: 100%; /* Ensure the image fits container width */
     height: 100%; /* Ensure the image fits container height */
     object-fit: contain; /* Maintain aspect ratio */
+    background-color: black;
 }
 #circleImage {
     position: absolute;
