@@ -4,8 +4,10 @@
 .alignment-div {
     display: none;
     flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: flex-start; /* Start from top */
+    align-items: center;
+    /* Center horizontally */
+    justify-content: flex-start;
+    /* Start from top */
     width: 100%;
     height: 100%;
     padding: 0;
@@ -16,10 +18,13 @@
 .action-mode-buttons {
     width: 100%;
     display: flex;
-    justify-content: center; /* Center buttons horizontally */
+    justify-content: center;
+    /* Center buttons horizontally */
     align-items: center;
-    gap: 15px; /* Space between buttons */
-    padding: 20px 0; /* Optional: add vertical breathing room */
+    gap: 15px;
+    /* Space between buttons */
+    padding: 20px 0;
+    /* Optional: add vertical breathing room */
 }
 
 /* Style for each action button */
@@ -48,45 +53,81 @@
 /* Wrapper around the image */
 .alignment-image-wrapper {
     width: auto;
-    height: 100%; /* Ensure wrapper takes full height of the parent */
+    height: 100%;
+    /* Ensure wrapper takes full height of the parent */
     display: flex;
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Stretch the image vertically */
+    justify-content: center;
+    /* Center the image horizontally */
+    align-items: center;
+    /* Stretch the image vertically */
     background-color: #333;
-    position: relative; /* Make this the reference for absolute positioning */
+    position: relative;
+    /* Make this the reference for absolute positioning */
+    transition: all 0.3s ease;
+    /* Smooth transition for the fullscreen effect */
 }
 
 /* Alignment image styling */
 #alignmentImage {
     width: auto;
-    height: 100%; /* Ensure image takes full height */
-    object-fit: contain; /* Allow image to cover entire height */
+    height: 100%;
+    /* Ensure image takes full height */
+    object-fit: contain;
+    /* Allow image to cover entire height */
     display: block;
+    transition: all 0.3s ease;
+    /* Smooth transition for resizing the image */
 }
 
 /* Fullscreen button styling */
-/* Fullscreen button styling */
 #fullscreenBtn {
     position: absolute;
-    width: 40px; /* Adjusted size to accommodate padding */
-    height: 40px; /* Adjusted size to accommodate padding */
-    top: 10px; /* Adjust top position */
-    right: 10px; /* Adjust right position */
-    color: white; /* Button text color */
-    font-size: 20px; /* Icon size */
-    border: 2px solid white; /* White border */
-    border-radius: 50%; /* Make the button circular */
-    background-color: transparent; /* No background */
+    width: 40px;
+    /* Adjusted size to accommodate padding */
+    height: 40px;
+    /* Adjusted size to accommodate padding */
+    top: 10px;
+    /* Adjust top position */
+    right: 10px;
+    /* Adjust right position */
+    color: white;
+    /* Button text color */
+    font-size: 20px;
+    /* Icon size */
+    border: 2px solid white;
+    /* White border */
+    border-radius: 50%;
+    /* Make the button circular */
+    background-color: transparent;
+    /* No background */
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 10px 12px 10px; /* 10px for top, left, and right; 12px for bottom */
+    padding: 10px 10px 12px 10px;
+    /* 10px for top, left, and right; 12px for bottom */
     transition: background-color 0.3s ease;
 }
 
 #fullscreenBtn:hover {
-    background-color: rgba(0, 0, 0, 0.3); /* Slightly darker on hover */
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Slightly darker on hover */
 }
 
+/* Fullscreen state styling */
+.alignment-image-wrapper.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black with 30% opacity */
+    z-index: 9999; /* Ensure it is on top */
+}
 
+.alignment-image-wrapper.fullscreen #alignmentImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Cover the screen in fullscreen mode */
+}
