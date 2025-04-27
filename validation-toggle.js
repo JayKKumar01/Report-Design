@@ -15,7 +15,7 @@ contentValidationBtn.addEventListener('click', () => {
 // Function to show Alignment Validation
 alignmentValidationBtn.addEventListener('click', () => {
     contentDiv.style.display = 'none';
-    alignmentDiv.style.display = 'block';
+    alignmentDiv.style.display = 'flex';
     alignmentValidationBtn.classList.add('selected');
     contentValidationBtn.classList.remove('selected');
 });
