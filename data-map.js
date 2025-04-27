@@ -1,196 +1,83 @@
-// Map to store the item image data
+// Updated Map to store the item image data (with "items/" prefix)
 const itemImageMap = new Map([
     ["Item A", {
         validationImages: [
-            ["1.jpg", "2.jpg"],
-            ["3.jpg", "4.jpg"],
-            ["5.jpg", "6.jpg"],
-            ["2.jpg", "3.jpg"],
-            ["4.jpg", "5.jpg"],
+            ["items/1.jpg", "items/2.jpg"],
+            ["items/3.jpg", "items/4.jpg"],
+            ["items/5.jpg", "items/6.jpg"],
+            ["items/2.jpg", "items/3.jpg"],
+            ["items/4.jpg", "items/5.jpg"],
         ],
         alignmentImages: [
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
         ]
     }],
     ["Item B", {
         validationImages: [
-            ["1.jpg", "3.jpg"],
-            ["2.jpg", "4.jpg"],
-            ["5.jpg", "1.jpg"],
-            ["3.jpg", "5.jpg"],
-            ["4.jpg", "2.jpg"],
+            ["items/1.jpg", "items/3.jpg"],
+            ["items/2.jpg", "items/4.jpg"],
+            ["items/5.jpg", "items/1.jpg"],
+            ["items/3.jpg", "items/5.jpg"],
+            ["items/4.jpg", "items/2.jpg"],
         ],
         alignmentImages: [
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
         ]
     }],
     ["Item C", {
         validationImages: [
-            ["2.jpg", "3.jpg"],
-            ["4.jpg", "5.jpg"],
-            ["6.jpg", "1.jpg"],
-            ["3.jpg", "4.jpg"],
-            ["5.jpg", "6.jpg"],
+            ["items/2.jpg", "items/3.jpg"],
+            ["items/4.jpg", "items/5.jpg"],
+            ["items/6.jpg", "items/1.jpg"],
+            ["items/3.jpg", "items/4.jpg"],
+            ["items/5.jpg", "items/6.jpg"],
         ],
         alignmentImages: [
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
         ]
     }],
     ["Item D", {
         validationImages: [
-            ["1.jpg", "5.jpg"],
-            ["2.jpg", "6.jpg"],
-            ["3.jpg", "1.jpg"],
-            ["4.jpg", "3.jpg"],
-            ["5.jpg", "2.jpg"],
+            ["items/1.jpg", "items/5.jpg"],
+            ["items/2.jpg", "items/6.jpg"],
+            ["items/3.jpg", "items/1.jpg"],
+            ["items/4.jpg", "items/3.jpg"],
+            ["items/5.jpg", "items/2.jpg"],
         ],
         alignmentImages: [
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
         ]
     }],
     ["Item E", {
         validationImages: [
-            ["1.jpg", "3.jpg"],
-            ["4.jpg", "2.jpg"],
-            ["5.jpg", "6.jpg"],
-            ["3.jpg", "5.jpg"],
-            ["2.jpg", "4.jpg"],
+            ["items/1.jpg", "items/3.jpg"],
+            ["items/4.jpg", "items/2.jpg"],
+            ["items/5.jpg", "items/6.jpg"],
+            ["items/3.jpg", "items/5.jpg"],
+            ["items/2.jpg", "items/4.jpg"],
         ],
         alignmentImages: [
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-            ["align1.jpg", "align2.jpg", "align2.jpg"],
-        ]
-    }],
-    // --- New Items Added ---
-    ["Item F", {
-        validationImages: [
-            ["6.jpg", "2.jpg"],
-            ["5.jpg", "3.jpg"],
-            ["4.jpg", "1.jpg"],
-            ["2.jpg", "5.jpg"],
-            ["3.jpg", "6.jpg"],
-        ],
-        alignmentImages: [
-            ["align1.jpg", "align3.jpg", "align2.jpg"],
-            ["align1.jpg", "align3.jpg", "align2.jpg"],
-            ["align1.jpg", "align3.jpg", "align2.jpg"],
-            ["align1.jpg", "align3.jpg", "align2.jpg"],
-            ["align1.jpg", "align3.jpg", "align2.jpg"],
-        ]
-    }],
-    ["Item G", {
-        validationImages: [
-            ["1.jpg", "6.jpg"],
-            ["2.jpg", "5.jpg"],
-            ["3.jpg", "4.jpg"],
-            ["5.jpg", "2.jpg"],
-            ["6.jpg", "1.jpg"],
-        ],
-        alignmentImages: [
-            ["align1.jpg", "align4.jpg", "align2.jpg"],
-            ["align1.jpg", "align4.jpg", "align2.jpg"],
-            ["align1.jpg", "align4.jpg", "align2.jpg"],
-            ["align1.jpg", "align4.jpg", "align2.jpg"],
-            ["align1.jpg", "align4.jpg", "align2.jpg"],
-        ]
-    }],
-    ["Item H", {
-        validationImages: [
-            ["3.jpg", "2.jpg"],
-            ["4.jpg", "1.jpg"],
-            ["6.jpg", "5.jpg"],
-            ["1.jpg", "3.jpg"],
-            ["5.jpg", "4.jpg"],
-        ],
-        alignmentImages: [
-            ["align1.jpg", "align5.jpg", "align2.jpg"],
-            ["align1.jpg", "align5.jpg", "align2.jpg"],
-            ["align1.jpg", "align5.jpg", "align2.jpg"],
-            ["align1.jpg", "align5.jpg", "align2.jpg"],
-            ["align1.jpg", "align5.jpg", "align2.jpg"],
-        ]
-    }],
-    ["Item I", {
-        validationImages: [
-            ["2.jpg", "1.jpg"],
-            ["3.jpg", "5.jpg"],
-            ["4.jpg", "6.jpg"],
-            ["5.jpg", "3.jpg"],
-            ["6.jpg", "2.jpg"],
-        ],
-        alignmentImages: [
-            ["align1.jpg", "align6.jpg", "align2.jpg"],
-            ["align1.jpg", "align6.jpg", "align2.jpg"],
-            ["align1.jpg", "align6.jpg", "align2.jpg"],
-            ["align1.jpg", "align6.jpg", "align2.jpg"],
-            ["align1.jpg", "align6.jpg", "align2.jpg"],
-        ]
-    }],
-    ["Item J", {
-        validationImages: [
-            ["1.jpg", "4.jpg"],
-            ["2.jpg", "3.jpg"],
-            ["5.jpg", "6.jpg"],
-            ["3.jpg", "1.jpg"],
-            ["4.jpg", "2.jpg"],
-        ],
-        alignmentImages: [
-            ["align1.jpg", "align7.jpg", "align2.jpg"],
-            ["align1.jpg", "align7.jpg", "align2.jpg"],
-            ["align1.jpg", "align7.jpg", "align2.jpg"],
-            ["align1.jpg", "align7.jpg", "align2.jpg"],
-            ["align1.jpg", "align7.jpg", "align2.jpg"],
-        ]
-    }],
-    ["Item K", {
-        validationImages: [
-            ["1.jpg", "4.jpg"],
-            ["2.jpg", "3.jpg"],
-            ["5.jpg", "6.jpg"],
-            ["3.jpg", "1.jpg"],
-            ["4.jpg", "2.jpg"],
-        ],
-        alignmentImages: [
-            ["align1.jpg", "align7.jpg", "align2.jpg"],
-            ["align1.jpg", "align7.jpg", "align2.jpg"],
-            ["align1.jpg", "align7.jpg", "align2.jpg"],
-            ["align1.jpg", "align7.jpg", "align2.jpg"],
-            ["align1.jpg", "align7.jpg", "align2.jpg"],
-        ]
-    }],
-    ["Item L", {
-        validationImages: [
-            ["1.jpg", "4.jpg"],
-            ["2.jpg", "3.jpg"],
-            ["5.jpg", "6.jpg"],
-            ["3.jpg", "1.jpg"],
-            ["4.jpg", "2.jpg"],
-        ],
-        alignmentImages: [
-            ["align1.jpg", "align7.jpg", "align2.jpg"],
-            ["align1.jpg", "align7.jpg", "align2.jpg"],
-            ["align1.jpg", "align7.jpg", "align2.jpg"],
-            ["align1.jpg", "align7.jpg", "align2.jpg"],
-            ["align1.jpg", "align7.jpg", "align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
+            ["items/align1.jpg", "items/align2.jpg", "items/align2.jpg"],
         ]
     }]
 ]);

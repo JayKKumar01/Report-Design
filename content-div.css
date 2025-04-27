@@ -5,6 +5,7 @@
     gap: 20px; /* Space between image and report containers */
     width: 100%; /* 100% width of its parent container */
     height: 100%; /* Full height of its parent container */
+    padding: 0 10px; /* <-- Only left and right */
     box-sizing: border-box; /* Includes padding and border in the width calculation */
     overflow: hidden; /* Prevents overflow if any */
 }

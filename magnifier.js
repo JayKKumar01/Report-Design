@@ -2,19 +2,31 @@ const mainImage = document.getElementById('mainImage');
 const circleImage = document.getElementById('circleImage');
 
 // Zoom factor: Controls the level of zoom
-const zoomFactor = 5;
+const zoomFactor = 3;
 const circleSize = 200;  // Size of the zoomed area (200px is the size of the circle)
 const sourceWidth = circleSize / zoomFactor; 
 const sourceHeight = circleSize / zoomFactor;
 
-// Cache image dimensions to avoid recalculating during each mouse move
-const imageWidth = mainImage.width;
-const imageHeight = mainImage.height;
+// Declare global variables to be updated
+let imageWidth = 0;
+let imageHeight = 0;
+let imageSrc = "";
+let rect = {};
 
-// Set background image for the circle once
-const imageSrc = mainImage.src;
+// Function to refresh image-related properties
+function updateImageProperties() {
+    const mainImage = document.getElementById("mainImage");
+    if (!mainImage) {
+        console.warn("Main image not found!");
+        return;
+    }
 
-const rect = mainImage.getBoundingClientRect();
+    imageWidth = mainImage.width;
+    imageHeight = mainImage.height;
+    imageSrc = mainImage.src;
+    rect = mainImage.getBoundingClientRect();
+}
+
 
 // Function to update zoomed view and position circular image
 function updateZoomedView(x, y) {

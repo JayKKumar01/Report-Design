@@ -80,3 +80,10 @@
     font-size: 16px;
     color: #333; /* Dark text color for readability */
 }
+
+/* Disabled button styles */
+.navigation-buttons button:disabled {
+    background-color: #cccccc; /* Light gray */
+    color: #666666;             /* Darker text */
+    cursor: not-allowed;
+}
