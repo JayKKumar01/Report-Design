@@ -65,21 +65,21 @@
     height: 40px;
     top: 10px;
     right: 10px;
-    color: white;
+    color: white; /* White text */
     font-size: 20px;
     border: 2px solid white;
     border-radius: 50%;
-    background-color: transparent;
+    background-color: #4a90e2; /* Blue background */
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px 10px 12px 10px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add a transform for hover effect */
 }
 
 #fullscreenBtn:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 100, 0);
 }
 
 .alignment-image-wrapper.fullscreen {
