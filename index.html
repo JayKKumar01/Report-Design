@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Link to right-content specific styles -->
     <link rel="stylesheet" href="right-content.css">
+    <!-- Link to middle content specific styles -->
+    <link rel="stylesheet" href="middle-content.css">
+    <link rel="stylesheet" href="content-div.css">
+
     <!-- Link to sidebar specific styles -->
     <link rel="stylesheet" href="sidebar.css">
 </head>
@@ -44,8 +48,14 @@
             <div class="middle-content">
                 <!-- Content Validation div -->
                 <div class="content-div" id="content-div">
-                    <h2>Content Validation</h2>
-                    <p>This is the content validation section.</p>
+                    <div class="image-container">
+                        <img id="mainImage" src="your-image.jpg" alt="Main Image" />
+                        <img id="circleImage" />
+                    </div>
+
+                    <div class="report-container">
+                        <img id="reportImage" src="your-image.jpg" alt="Report Image" />
+                    </div>
                 </div>
 
                 <!-- Alignment Validation div -->
@@ -67,9 +77,9 @@
         </div>
     </div>
 
-     <!-- Link to script files -->
-     <script src="validation-toggle.js"></script>
-     <script src="sidebar-toggle.js"></script>
+    <!-- Link to script files -->
+    <script src="validation-toggle.js"></script>
+    <script src="sidebar-toggle.js"></script>
 </body>
 
 </html>

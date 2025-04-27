@@ -6,7 +6,7 @@ const alignmentDiv = document.getElementById('alignment-div');
 
 // Function to show Content Validation
 contentValidationBtn.addEventListener('click', () => {
-    contentDiv.style.display = 'block';
+    contentDiv.style.display = 'flex';
     alignmentDiv.style.display = 'none';
     contentValidationBtn.classList.add('selected');
     alignmentValidationBtn.classList.remove('selected');
@@ -19,7 +19,3 @@ alignmentValidationBtn.addEventListener('click', () => {
     alignmentValidationBtn.classList.add('selected');
     contentValidationBtn.classList.remove('selected');
 });
-
-// Initialize with Content Validation visible
-contentDiv.style.display = 'block';
-alignmentDiv.style.display = 'none';

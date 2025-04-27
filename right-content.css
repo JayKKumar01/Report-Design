@@ -2,7 +2,6 @@
 .right-content {
     width: 90%; /* 90% width */
     height: 100%; /* Full height */
-    position: relative; /* Parent container to position children absolutely */
     display: flex;
     flex-direction: column; /* Stack elements vertically */
 }
@@ -40,24 +39,6 @@
 .top-div button:hover {
     background-color: #146544; /* Darker grey on hover */
     transform: scale(.95); /* Slight scale-up effect */
-}
-
-/* Middle content section */
-.middle-content {
-    flex: 1; /* Make it take up the remaining space */
-    padding: 20px; /* Some padding around the content */
-    background-color: #f0f0f0; /* Light background for visibility */
-    overflow-y: auto; /* Enable scrolling if content overflows */
-}
-
-/* Content validation section */
-.content-div {
-    display: block; /* Initially show content validation */
-}
-
-/* Alignment validation section */
-.alignment-div {
-    display: none; /* Initially hide alignment validation */
 }
 
 /* Bottom div */
