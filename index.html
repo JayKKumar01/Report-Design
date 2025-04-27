@@ -36,8 +36,23 @@
         <div class="right-content">
             <!-- Top div with buttons -->
             <div class="top-div">
-                <button>Content Validation</button>
-                <button>Alignment Validation</button>
+                <button class="selected" id="content-validation-btn">Content Validation</button>
+                <button id="alignment-validation-btn">Alignment Validation</button>
+            </div>
+
+            <!-- Middle content section -->
+            <div class="middle-content">
+                <!-- Content Validation div -->
+                <div class="content-div" id="content-div">
+                    <h2>Content Validation</h2>
+                    <p>This is the content validation section.</p>
+                </div>
+
+                <!-- Alignment Validation div -->
+                <div class="alignment-div" id="alignment-div">
+                    <h2>Alignment Validation</h2>
+                    <p>This is the alignment validation section.</p>
+                </div>
             </div>
 
             <!-- Bottom div with navigation buttons -->
@@ -51,6 +66,10 @@
             </div>
         </div>
     </div>
+
+     <!-- Link to script files -->
+     <script src="validation-toggle.js"></script>
+     <script src="sidebar-toggle.js"></script>
 </body>
 
 </html>

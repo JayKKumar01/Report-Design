@@ -47,7 +47,7 @@
 /* Hover effect for sidebar items */
 .sidebar-item:hover {
     background-color: #b0b0b0; /* Darker grey on hover */
-    transform: scale(1.05); /* Slight scale-up effect */
+    transform: scale(.95); /* Slight scale-up effect */
 }
 
 /* Active item style (green background) */
