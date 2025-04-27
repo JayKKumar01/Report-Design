@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cursor Magnifier</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="image-container">
-    <img id="mainImage" src="your-image.jpg" alt="Main Image" />
-    <img id="circleImage"/>
-  </div>
 
-  <script src="script.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Fullscreen Div</title>
+    <!-- Link to general layout styles -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to right-content specific styles -->
+    <link rel="stylesheet" href="right-content.css">
+    <!-- Link to sidebar specific styles -->
+    <link rel="stylesheet" href="sidebar.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar on the left with blue background -->
+        <div class="sidebar">
+            <div class="sidebar-header">Items</div>
+            <div class="sidebar-items">
+                <div class="sidebar-item active" id="item-1">Item 1</div>
+                <div class="sidebar-item" id="item-2">Item 2</div>
+                <div class="sidebar-item" id="item-3">Item 3</div>
+                <div class="sidebar-item" id="item-4">Item 4</div>
+                <div class="sidebar-item" id="item-5">Item 5</div>
+                <div class="sidebar-item" id="item-6">Item 6</div>
+                <div class="sidebar-item" id="item-7">Item 7</div>
+                <div class="sidebar-item" id="item-8">Item 8</div>
+                <div class="sidebar-item" id="item-9">Item 9</div>
+                <div class="sidebar-item" id="item-10">Item 10</div>
+            </div>
+        </div>
+
+        <!-- Right-side content container -->
+        <div class="right-content">
+            <!-- Top div with buttons -->
+            <div class="top-div">
+                <button>Content Validation</button>
+                <button>Alignment Validation</button>
+            </div>
+
+            <!-- Bottom div with navigation buttons -->
+            <div class="bottom-div">
+                <!-- Navigation Buttons -->
+                <div class="navigation-buttons">
+                    <button id="prev-page" disabled>Previous</button>
+                    <span id="page-info">Page 1 of 1</span>
+                    <button id="next-page" disabled>Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

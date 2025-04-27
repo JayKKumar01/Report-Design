@@ -1,0 +1,80 @@
+/* Right-side div with 90% width */
+.right-content {
+    width: 90%; /* 90% width */
+    height: 100%; /* Full height */
+    position: relative; /* Parent container to position children absolutely */
+}
+
+/* Top div with absolute position */
+.top-div {
+    display: flex;
+    flex-direction: row; /* Arrange buttons horizontally */
+    justify-content: center; /* Center buttons horizontally */
+    align-items: center; /* Center buttons vertically */
+    padding: 10px 0; /* Small padding for some spacing */
+    height: auto; /* Allow height to adjust based on content */
+    position: absolute; /* Position top div absolutely */
+    top: 0; /* Stick to the top of the container */
+    width: 100%; /* Full width */
+}
+
+/* Styling only the buttons inside the top div */
+.top-div button {
+    padding: 15px 30px; /* Horizontal padding to make buttons bigger */
+    margin: 0 10px; /* Small margin between buttons */
+    font-size: 18px; /* Larger font size for readability */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners for modern look */
+    background-color: #4a90e2; /* Blue background color */
+    color: white; /* White text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Hover effect for buttons inside top div */
+.top-div button:hover {
+    background-color: #357ab7; /* Darker blue on hover */
+}
+
+/* Bottom div with absolute position */
+.bottom-div {
+    position: absolute; /* Position bottom div absolutely */
+    bottom: 0; /* Stick to the bottom of the container */
+    width: 100%; /* Full width */
+    height: auto; /* Allow height to adjust based on content */
+    padding: 10px 0; /* Small padding for some spacing */
+    display: flex;
+    justify-content: center; /* Center navigation elements */
+    align-items: center; /* Center items vertically */
+}
+
+/* Navigation buttons container */
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Gap between buttons and page info */
+}
+
+/* Styling for individual navigation buttons */
+.navigation-buttons button {
+    padding: 10px 20px; /* Padding for buttons */
+    font-size: 16px; /* Font size for readability */
+    background-color: #4a90e2; /* Blue background */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for navigation buttons */
+.navigation-buttons button:hover {
+    background-color: #357ab7; /* Darker blue on hover */
+}
+
+/* Styling for the page info text */
+.navigation-buttons #page-info {
+    font-size: 16px;
+    color: #333; /* Dark text color for readability */
+}

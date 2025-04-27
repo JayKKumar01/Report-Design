@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validation Tool</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="outer-container">
+    
+    <!-- Sidebar (Items) -->
+    <div class="sidebar">
+      <div class="sidebar-item selected">Item 1</div>
+      <div class="sidebar-item">Item 2</div>
+      <div class="sidebar-item">Item 3</div>
+      <div class="sidebar-item">Item 4</div>
+      <div class="sidebar-item">Item 5</div>
+      <div class="sidebar-item">Item 6</div>
+      <div class="sidebar-item">Item 7</div>
+      <div class="sidebar-item">Item 8</div>
+      <div class="sidebar-item">Item 9</div>
+      <div class="sidebar-item">Item 10</div>
+    </div>
+
+    <!-- Main container (Everything else) -->
+    <div class="main-container">
+      
+      <div class="top-buttons">
+        <button id="contentValidationBtn" class="validation-button selected-validation">Content Validation</button>
+        <button id="alignmentValidationBtn" class="validation-button">Alignment Validation</button>
+      </div>
+
+      <!-- Validation Content Wrapper -->
+      <div id="wrapper" class="wrapper">
+        <div class="image-container">
+          <img id="mainImage" src="your-image.jpg" alt="Main Image" />
+          <img id="circleImage" />
+        </div>
+
+        <div class="report-container">
+          <img id="reportImage" src="your-image.jpg" alt="Report Image" />
+        </div>
+      </div>
+
+      <!-- Alignment Validation Content (hidden initially) -->
+      <div id="alignmentValidationDiv" class="alignment-validation-wrapper">
+        <div class="alignment-buttons">
+          <button id="pressAndHoldBtn" class="alignment-button">Press and Hold</button>
+          <button id="highlightBtn" class="alignment-button">Highlight</button>
+        </div>
+        <div class="image-view">
+          <img id="alignmentImage" src="your-image.jpg" alt="Alignment Image" />
+        </div>
+      </div>
+
+      <!-- Page navigation -->
+      <div class="page-navigation">
+        <button class="nav-button">Previous</button>
+        <span>Page 1 of 10</span>
+        <button class="nav-button">Next</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

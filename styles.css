@@ -1,30 +1,27 @@
+/* Setting a darker shade of white for the body */
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-  padding: 20px;
+    background-color: #f4f4f4; /* A bit darker than white */
+    margin: 0; /* Removing default margin */
+    padding: 0;
+    height: 100vh; /* Ensure full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center content vertically */
+    font-family: 'Arial', sans-serif; /* Modern sans-serif font */
 }
 
-.image-container {
-  position: relative;
-  max-width: 60%; /* Ensure main image stays within 80% of container */
-  max-height: 60%;
-  overflow: hidden;
+/* Container div with 95% width and 95% height of the viewport */
+.container {
+    width: 95vw; /* 95% of viewport width */
+    height: 95vh; /* 95% of viewport height */
+    background-color: #ffffff; /* White background for the div */
+    box-sizing: border-box; /* Ensure margin is inside the div */
+    display: flex;
+    justify-content: flex-start; /* Align items horizontally */
+    align-items: center; /* Center content vertically */
+    border-radius: 15px; /* Rounded corners for a soft modern look */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
 }
 
-#mainImage {
-  width: 100%; /* Main image takes the full width of its container */
-  height: 100%;
-  object-fit: contain;
-}
 
-#circleImage {
-  position: absolute;
-  display: none; /* Hide the circle image initially */
-  border-radius: 50%;
-  object-fit: cover;
-  pointer-events: none;  /* Make sure it doesn't interfere with mouse events */
-}

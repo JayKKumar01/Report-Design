@@ -1,0 +1,213 @@
+/* Body styling */
+body {
+  margin: 0;
+  padding: 20px;
+  height: 100vh;
+  background: #f0f2f5; /* Light grey */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Outer white container */
+.outer-container {
+  width: 95%;
+  height: 95%;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row; /* Side by side */
+  gap: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 10%;
+  background-color: #d0eaff; /* Light blue */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+/* Sidebar items */
+.sidebar-item {
+  width: 90%;
+  text-align: center;
+  padding: 15px 5px; /* Increased padding for more height */
+  border-radius: 8px;
+  background-color: #888; /* Grey default */
+  color: white;
+  font-weight: bold;
+  font-size: 18px; /* Increased font size */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Hover effect for sidebar items */
+.sidebar-item:hover {
+  background-color: #555; /* Darker grey on hover */
+}
+
+/* Selected item (when clicked or selected) */
+.sidebar-item.selected {
+  background-color: green; /* Green when selected */
+}
+
+
+/* Main container (everything else inside) */
+.main-container {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Top Buttons */
+.top-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Normal validation buttons */
+.validation-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #888; /* Normal Green */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover on any button */
+.validation-button:hover {
+  background-color: #45a049;
+}
+
+/* Selected validation button (darker and standout) */
+.selected-validation {
+  background-color: #388E3C; /* Darker Green */
+}
+
+
+/* Wrapper with images */
+.wrapper {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container, .report-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-container {
+  flex: 2;
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.report-container {
+  flex: 1;
+  background: #fafafa;
+  border-radius: 10px;
+}
+
+#mainImage, #reportImage {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+#circleImage {
+  position: absolute;
+  display: none;
+  border-radius: 50%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Alignment validation section (hidden initially) */
+.alignment-validation-wrapper {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.alignment-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.alignment-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #2196F3;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.alignment-button:hover {
+  background-color: #1976D2;
+}
+
+.image-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 300px; /* Fixed height for image */
+  width: 100%;
+}
+
+#alignmentImage {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Page navigation buttons */
+.page-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #1976D2;
+}
