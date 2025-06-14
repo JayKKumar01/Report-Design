@@ -51,6 +51,7 @@ function updateAlignmentImage(currentSet, currentPage) {
         if (currentAlignmentImage) {
             alignmentImage.src = currentAlignmentImage;
         } else {
+            alignmentImage.src = null;
             console.warn(`No alignment image found for page ${currentPage}`);
         }
     }

@@ -21,13 +21,17 @@ function updateNavigation() {
 
 // Function to update mainImage and reportImage based on current page
 function updateImages() {
+    const mainImage = document.getElementById("mainImage");
+    const reportImage = document.getElementById("reportImage");
+
     if (!currentSet || !currentSet.validationImages || currentSet.validationImages.length === 0) {
         console.warn("No images to update.");
+        mainImage.src = null;
+        reportImage.src = null;
         return;
     }
 
-    const mainImage = document.getElementById("mainImage");
-    const reportImage = document.getElementById("reportImage");
+    
 
     const currentImages = currentSet.validationImages[currentPage - 1];
 
