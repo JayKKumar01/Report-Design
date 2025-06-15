@@ -1,98 +1,56 @@
-Sure! Here's the complete `README.md` content as **plain text** that you can copy and paste directly into your README file:
+Report Design - Interactive Image Comparison Tool
 
----
+This project is a web-based tool that allows users to compare two images side-by-side using a circular magnifier (zoom lens). It’s particularly useful for design verification, PDF-to-image comparisons, or spotting subtle differences between reference and report images.
 
-```
-# 📝 Report Design - Interactive Image Comparison Tool
+🔗 Live Demo  
+https://jaykkumar01.github.io/Report-Design/
 
-**Report Design** is a clean, interactive web-based tool that allows users to visually compare two images — typically a reference design and its implementation — using a real-time **magnifying glass** (zoom lens). It's designed for document reviewers, testers, designers, and developers who want to verify fine-grain visual differences efficiently.
+Features
+--------
 
----
+- Zoom lens that follows the mouse to magnify image content.
+- Works for both fixed main image and vertically scrollable report image.
+- Automatically updates magnifier content even while scrolling.
+- Performance-optimized for low-end devices.
+- No external dependencies — pure HTML, CSS, and JavaScript.
 
-## 🔗 Live Demo
+How It Works
+------------
 
-🎯 **Try it now:** https://jaykkumar01.github.io/Report-Design/
+- The left side displays the fixed main image.
+- The right side shows a tall report image inside a scrollable container.
+- As you move the mouse over either image, a circular lens shows a zoomed-in portion of the area.
+- On scroll, the zoomed content updates dynamically, staying in sync with the image beneath the lens.
 
----
+Usage
+-----
 
-## ✨ Features
+1. Clone or download this repository.
+2. Open `index.html` in your browser.
+3. Replace `mainImage` and `reportImage` `src` attributes in `index.html` with your desired images if needed.
 
-- 🔍 **Interactive Zoom Lens**  
-  Hover over either image to magnify content using a circular zoom lens that follows your cursor.
-  
-- 📄 **Side-by-Side Comparison**  
-  A split-view layout with a main image on the left and a scrollable report image on the right.
+Customization
+-------------
 
-- 📜 **Scroll-Aware Zooming**  
-  The lens remains aligned to the correct image position even while scrolling vertically through tall reports.
+- Adjust `zoomFactor` or `circleSize` in `script.js` to change zoom intensity or lens size.
+- Modify lens styling in `style.css` to customize borders, shape, shadow, etc.
+- Easily extendable for use with other image formats or multi-page documents.
 
-- ⚡ **Optimized Performance**  
-  Lightweight code and rendering logic ensure smooth behavior even on low-end devices.
+File Structure
+--------------
 
-- 🎨 **Clean UI**  
-  Uses modern HTML/CSS layout with no external frameworks or libraries.
+- index.html       – Main layout and image containers.
+- style.css        – Layout styling and magnifier appearance.
+- script.js        – All zoom and scroll synchronization logic.
 
----
+License
+-------
 
-## 🧰 Tech Stack
+MIT License — Free for personal and commercial use.
 
-- **HTML5** — Structured layout and image embedding
-- **CSS3** — Flexbox layout, lens styling, and responsiveness
-- **JavaScript (ES6)** — Real-time interaction logic and scroll handling
+Author
+------
 
----
-
-## 🗂️ Project Structure
-
-```
-
-📦 Report-Design
-┣ 📄 index.html             # Main HTML layout
-┣ 📄 style.css              # UI and magnifier styling
-┣ 📄 script.js              # Image zoom/magnifier logic
-┗ 📁 assets/                # Optional: images/screenshots used for demo
-
-````
-
----
-
-## 🚀 Getting Started
-
-To run locally:
-
-```bash
-git clone https://github.com/JayKKumar01/Report-Design.git
-cd Report-Design
-open index.html  # or just open in any browser
-````
-
-Or simply visit the [Live Demo](https://jaykkumar01.github.io/Report-Design/).
-
----
-
-## ⚙️ Customization
-
-* Replace `mainImage` and `reportImage` `src` attributes in `index.html` to use your own images.
-* Adjust `zoomFactor` or `circleSize` in `script.js` to tweak zoom level and lens size.
-* Style the magnifier further in `style.css` (e.g., border, shadow, shape).
-
----
-
-## 🪪 License
-
-This project is licensed under the **MIT License**.
-Feel free to use, modify, and distribute it as you like.
-
----
-
-## 🙌 Acknowledgments
-
-Built with dedication by **Jay Kumar**
-Inspired by the need for simple, visual document inspection tools.
-
-```
-
----
-
-Let me know if you want a shorter or more minimal version too!
-```
+Developed by Jay Kumar  
+GitHub: https://github.com/JayKKumar01  
+Live Demo: https://jaykkumar01.github.io/Report-Design/
