@@ -1,0 +1,24 @@
+<style>
+    #circleImage {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: #ccc;
+      position: relative;
+      margin: 100px auto;
+    }
+    
+    #circleImage::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 40px;
+      background: black;
+      bottom: -35px;
+      left: 50%;
+      transform: translateX(-50%) rotate(25deg);
+    }
+    </style>
+    
+    <div id="circleImage"></div>
+    

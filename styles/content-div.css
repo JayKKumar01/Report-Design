@@ -32,7 +32,7 @@
 
 /* Image to fit in the container */
 #mainImage {
-    width: 100%;
+    height: 100%;
     /* Ensure the image fits container width */
     max-height: 100%;
     /* Ensure the image fits container height */
@@ -41,21 +41,30 @@
     background-color: black;
 }
 
-#circleImage {
-    position: absolute;
-    display: none;
-    border-radius: 50%;
-    object-fit: contain;
-    pointer-events: none;
-}
 
+#circleImage,
 #reportCircleImage {
     position: absolute;
     display: none;
     border-radius: 50%;
     object-fit: contain;
     pointer-events: none;
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+        inset 0 0 10px rgba(255, 255, 255, 0.3),
+        0 4px 12px rgba(0, 0, 0, 0.25);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(1px);
+    transition: background-position 0.05s;
+    z-index: 1000; /* Ensure it's on top */
 }
+
+
 
 /* Report container (1/3 width) */
 .report-container {
