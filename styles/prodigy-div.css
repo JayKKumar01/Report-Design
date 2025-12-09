@@ -1,89 +1,75 @@
-/* Prodigy panel — fixed & aligned layout (50 / 50 split, buttons on top, content fills remaining) */
+/* prodigy-div.css — minimal version matching alignment-div.css */
 
 .prodigy-div {
-    display: flex;               /* column layout: buttons at top, container fills below */
+    display: none;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     justify-content: flex-start;
     width: 100%;
     height: 100%;
-    padding: 0 10px;             /* same gutter as other panels */
+    padding: 0 10px; /* Only left and right */
     box-sizing: border-box;
     overflow: hidden;
 }
 
-/* keep same spacing as action-mode-buttons used elsewhere */
-.prodigy-div .action-mode-buttons {
+/* Mode buttons */
+.action-mode-buttons {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
     padding: 20px 0;
-    flex: 0 0 auto;              /* don't stretch; occupy only its content height */
 }
 
-/* container that fills remaining vertical space under the buttons */
+.action-mode-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e0e0e0;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.action-mode-buttons button:hover {
+    background-color: #c8e6c9;
+}
+
+.action-mode-buttons button.selected {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Main container for source & report images */
 .prodigy-container {
-    flex: 1 1 0;                 /* take the remaining height */
     width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: row;         /* horizontal split */
-    gap: 20px;
-    box-sizing: border-box;
-    overflow: hidden;
-    min-height: 0;               /* important for children to be scrollable when needed */
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background-color: #333;
+    transition: all 0.3s ease;
 }
 
-/* left and right split: equal widths, both fill container height */
-.prodigy-container .image-container,
-.prodigy-container .report-container {
-    flex: 1 1 0;                 /* 50% each */
+/* Source & report image wrappers */
+.image-container,
+.report-container {
+    width: 50%;
     height: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* make report-container scroll its inner image if necessary */
-.prodigy-container .report-container {
-    justify-content: flex-start;
-    align-items: flex-start;
-    overflow-y: auto;
-    padding: 8px 0;              /* small vertical padding like content/report panels */
-}
-
-/* Prodigy image styling: occupy available height but keep aspect ratio */
-#prodigyImage {
-    max-height: 100%;
-    max-width: 100%;
-    height: 100%;
+/* Images */
+#prodigyImage,
+#prodigyReportImage {
     width: auto;
+    height: 100%;
     object-fit: contain;
     display: block;
-    background-color: black;
-}
-
-/* Prodigy report image behaves like report images */
-#prodigyReportImage {
-    width: 100%;
-    height: auto;
-    max-height: 100%;
-    object-fit: cover;
-    object-position: top;
-    display: block;
-}
-
-/* Ensure on narrow screens image stacks nicely */
-@media (max-width: 800px) {
-    .prodigy-container {
-        flex-direction: column;
-    }
-    .prodigy-container .image-container,
-    .prodigy-container .report-container {
-        height: 50%;
-        width: 100%;
-    }
+    transition: all 0.3s ease;
 }
