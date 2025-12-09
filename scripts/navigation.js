@@ -16,7 +16,7 @@ function updateNavigation() {
     // Also update images when navigation changes
     updateImages();
     updateAlignmentImage(currentSet, currentPage);
-    // updateImageProperties();
+    updateProdigyImage(currentSet, currentPage);
 }
 
 // Function to update mainImage and reportImage based on current page
