@@ -1,10 +1,7 @@
-/* prodigy-div.css - full file
-   NOTE: Only the report container (pairs-*) block has been modernized.
-   Everything else kept as you had it (image area, buttons, container, etc.)
-*/
+/* prodigy-div.css - scoped to #prodigy-div so it won't affect other parts */
 
 /* Main prodigy wrapper */
-.prodigy-div {
+#prodigy-div.prodigy-div {
     display: none;
     flex-direction: column;
     align-items: center;
@@ -16,8 +13,8 @@
     overflow: hidden;
 }
 
-/* Buttons row */
-.action-mode-buttons {
+/* Buttons row inside prodigy */
+#prodigy-div .action-mode-buttons {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -25,7 +22,7 @@
     padding: 20px 0;
 }
 
-.action-mode-buttons button {
+#prodigy-div .action-mode-buttons button {
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
@@ -36,13 +33,13 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.action-mode-buttons button.selected {
+#prodigy-div .action-mode-buttons button.selected {
     background-color: #4caf50;
     color: white;
 }
 
 /* Main area: Image left, list right */
-.prodigy-container {
+#prodigy-div .prodigy-container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -50,8 +47,8 @@
     background: none !important;
 }
 
-/* Left panel: image (transparent) */
-.image-container {
+/* Left panel: image (transparent) inside prodigy */
+#prodigy-div .image-container {
     width: 50%;
     height: 100%;
     display: flex;
@@ -60,8 +57,8 @@
     background: none !important;
 }
 
-/* Image itself */
-#prodigyImage {
+/* Image itself inside prodigy */
+#prodigy-div #prodigyImage {
     width: auto;
     height: 100%;
     object-fit: contain;
@@ -72,7 +69,7 @@
 /* ===== Improved Report Container ONLY ==================== */
 /* ========================================================= */
 
-.pairs-container {
+#prodigy-div .pairs-container {
     width: 50%;
     height: 100%;
     display: flex;
@@ -89,7 +86,7 @@
 }
 
 /* Header row — now HIGHER CONTRAST */
-.pairs-header {
+#prodigy-div .pairs-header {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -108,7 +105,7 @@
 }
 
 /* Divider below header */
-.pairs-header::after {
+#prodigy-div .pairs-header::after {
     content: "";
     display: block;
     height: 1px;
@@ -118,7 +115,7 @@
 }
 
 /* List container */
-.pairs-list {
+#prodigy-div .pairs-list {
     flex: 1;
     overflow-y: auto;     /* vertical scroll */
     padding: 8px 2px;
@@ -128,7 +125,7 @@
 }
 
 /* Each pair row: modern card look */
-.pair-row {
+#prodigy-div .pair-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
@@ -144,13 +141,13 @@
 }
 
 /* hover effect */
-.pair-row:hover {
+#prodigy-div .pair-row:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
 }
 
 /* Row content: WITH horizontal scroll inside each sentence */
-.pair-row .col {
+#prodigy-div .pair-row .col {
     padding: 6px 8px;
     color: #0b1220;
     font-size: 14px;
@@ -162,12 +159,12 @@
     scrollbar-width: none;  /* Firefox hide scrollbar */
 }
 
-.pair-row .col::-webkit-scrollbar {
+#prodigy-div .pair-row .col::-webkit-scrollbar {
     height: 0px;            /* Chrome hide scrollbar */
 }
 
 /* Wrong sentence style */
-.pair-row .wrong {
+#prodigy-div .pair-row .wrong {
     color: #b42318;
     background: rgba(180,35,24,0.06);
     border-radius: 8px;
@@ -176,7 +173,7 @@
 }
 
 /* Suggested sentence style */
-.pair-row .suggested {
+#prodigy-div .pair-row .suggested {
     color: #057a55;
     background: rgba(5,122,85,0.05);
     border-radius: 8px;
@@ -185,7 +182,7 @@
 }
 
 /* Empty state row */
-.pair-row.empty {
+#prodigy-div .pair-row.empty {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -201,12 +198,20 @@
     box-shadow: none;
 }
 
-/* Subtle custom scrollbar for pairs-list */
-.pairs-list::-webkit-scrollbar { width: 10px; }
-.pairs-list::-webkit-scrollbar-track { background: transparent; }
-.pairs-list::-webkit-scrollbar-thumb {
+/* Subtle custom scrollbar for pairs-list (scoped) */
+#prodigy-div .pairs-list::-webkit-scrollbar { width: 10px; }
+#prodigy-div .pairs-list::-webkit-scrollbar-track { background: transparent; }
+#prodigy-div .pairs-list::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #e6eefc, #dfe9f6);
     border-radius: 8px;
     border: 2px solid transparent;
     background-clip: padding-box;
 }
+
+/* also scope any utility columns used in header */
+#prodigy-div .pairs-header .col { padding: 0; }
+#prodigy-div .pairs-header .wrong-col,
+#prodigy-div .pairs-header .suggested-col { font-weight: 700; font-size: 13px; }
+
+/* Ensure any generic selectors used here do not leak out */
+#prodigy-div .col { box-sizing: border-box; }
