@@ -33,6 +33,7 @@
             <div class="top-div">
                 <button class="selected" id="content-validation-btn">Content Validation</button>
                 <button id="alignment-validation-btn">Alignment Validation</button>
+                <button id="prodigy-validation-btn">Prodigy Validation</button>
             </div>
 
             <!-- Middle content section -->
@@ -62,6 +63,27 @@
                         <button id="fullscreenBtn" title="Fullscreen">⛶</button>
                     </div>
                 </div>
+
+                <!-- Prodigy Validation div -->
+                <div class="prodigy-div" id="prodigy-div" style="display: none;">
+                    <div class="action-mode-buttons" id="prodigyModeButtons">
+                        <button id="prodigySourceBtn" class="selected">Source</button>
+                        <button id="prodigyTargetBtn">Target</button>
+                    </div>
+
+                    <div class="prodigy-container">
+                        <div class="image-container">
+                            <img id="prodigyImage" src="" alt="Prodigy Image" />
+                        </div>
+
+                        <div class="report-container">
+                            <img id="prodigyReportImage" src="" alt="Prodigy Report" />
+                        </div>
+                    </div>
+                </div>
+
+
+
             </div>
 
             <!-- Bottom div with navigation buttons -->
@@ -80,6 +102,7 @@
     <script src="scripts/validation-toggle.js"></script>
     <script src="scripts/sidebar.js"></script>
     <script src="scripts/alignment.js"></script>
+    <script src="scripts/prodigy.js"></script>
     <script src="scripts/navigation.js"></script>
     <script src="scripts/magnifier.js"></script>
     <script src="scripts/fullscreen-toggle.js"></script>

@@ -1,22 +1,46 @@
-// JavaScript to toggle content and alignment validation
+// Buttons
 const contentValidationBtn = document.getElementById('content-validation-btn');
 const alignmentValidationBtn = document.getElementById('alignment-validation-btn');
+const prodigyValidationBtn = document.getElementById('prodigy-validation-btn');
+
+// Sections
 const contentDiv = document.getElementById('content-div');
 const alignmentDiv = document.getElementById('alignment-div');
+const prodigyDiv = document.getElementById('prodigy-div');
 
-// Function to show Content Validation
+// Helper to switch tabs
+function activateTab(activeBtn, ...inactiveBtns) {
+    activeBtn.classList.add('selected');
+    inactiveBtns.forEach(btn => btn.classList.remove('selected'));
+}
+
+// Show Content Validation
 contentValidationBtn.addEventListener('click', () => {
     contentDiv.style.display = 'flex';
     alignmentDiv.style.display = 'none';
-    contentValidationBtn.classList.add('selected');
-    alignmentValidationBtn.classList.remove('selected');
-    updateImageProperties();
+    prodigyDiv.style.display = 'none';
+
+    activateTab(contentValidationBtn, alignmentValidationBtn, prodigyValidationBtn);
+
+    updateImageProperties(); // existing function
 });
 
-// Function to show Alignment Validation
+// Show Alignment Validation
 alignmentValidationBtn.addEventListener('click', () => {
-    contentDiv.style.display = 'none';
     alignmentDiv.style.display = 'flex';
-    alignmentValidationBtn.classList.add('selected');
-    contentValidationBtn.classList.remove('selected');
+    contentDiv.style.display = 'none';
+    prodigyDiv.style.display = 'none';
+
+    activateTab(alignmentValidationBtn, contentValidationBtn, prodigyValidationBtn);
+});
+
+// Show Prodigy Validation
+prodigyValidationBtn.addEventListener('click', () => {
+    prodigyDiv.style.display = 'flex';
+    contentDiv.style.display = 'none';
+    alignmentDiv.style.display = 'none';
+
+    activateTab(prodigyValidationBtn, contentValidationBtn, alignmentValidationBtn);
+
+    // TODO: update prodigy image if needed
 });
