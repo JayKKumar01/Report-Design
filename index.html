@@ -65,7 +65,6 @@
                     </div>
                 </div>
 
-                <!-- Prodigy Validation div -->
                 <div class="prodigy-div" id="prodigy-div">
                     <div class="action-mode-buttons" id="prodigyModeButtons">
                         <button id="prodigySourceBtn" class="selected">Source</button>
@@ -73,15 +72,31 @@
                     </div>
 
                     <div class="prodigy-container">
+
+                        <!-- LEFT: Image -->
                         <div class="image-container">
                             <img id="prodigyImage" src="" alt="Prodigy Image" />
                         </div>
 
-                        <div class="report-container">
-                            <img id="prodigyReportImage" src="" alt="Prodigy Report" />
+                        <!-- RIGHT: Sentence list (Wrong | Suggested) -->
+                        <div class="pairs-container">
+                            <div class="pairs-header">
+                                <div class="col wrong-col">Wrong Sentence</div>
+                                <div class="col suggested-col">Suggested Sentence</div>
+                            </div>
+
+                            <div id="pairsList" class="pairs-list">
+                                <!-- JS will append rows like:
+                                <div class="pair-row">
+                                    <div class="col wrong">text...</div>
+                                    <div class="col suggested">text...</div>
+                                </div>
+                                -->
+                            </div>
                         </div>
                     </div>
                 </div>
+
 
 
 

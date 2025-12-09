@@ -10,6 +10,9 @@ const prodigyActionButtons = document.querySelectorAll('#prodigy-div .action-mod
 // The prodigy image element in the DOM
 const prodigyImageEl = document.getElementById('prodigyImage');
 
+// The pairs list container (right panel)
+const pairsListEl = document.getElementById('pairsList');
+
 /**
  * Utility: get the page entry object for currentSet/currentPage
  * Expected shape per page:
@@ -81,6 +84,59 @@ function dispatchProdigyPairsChanged(pairs) {
 }
 
 /**
+ * Render the pairs into the #pairsList container.
+ * Each row: .pair-row -> two .col elements (.wrong and .suggested)
+ *
+ * Uses textContent to avoid HTML injection.
+ *
+ * @param {Array} pairs
+ */
+function renderProdigyPairs(pairs) {
+    if (!pairsListEl) return;
+
+    // Clear existing
+    pairsListEl.innerHTML = '';
+
+    if (!Array.isArray(pairs) || pairs.length === 0) {
+        // Optionally show an empty state
+        const empty = document.createElement('div');
+        empty.className = 'pair-row';
+        const left = document.createElement('div');
+        left.className = 'col wrong';
+        left.textContent = 'No sentences';
+        const right = document.createElement('div');
+        right.className = 'col suggested';
+        right.textContent = '';
+        empty.appendChild(left);
+        empty.appendChild(right);
+        pairsListEl.appendChild(empty);
+        return;
+    }
+
+    // Append rows
+    pairs.forEach(pair => {
+        // pair may be [wrong, suggested] — be defensive
+        const wrongText = (Array.isArray(pair) && pair.length > 0 && typeof pair[0] === 'string') ? pair[0] : '';
+        const suggestedText = (Array.isArray(pair) && pair.length > 1 && typeof pair[1] === 'string') ? pair[1] : '';
+
+        const row = document.createElement('div');
+        row.className = 'pair-row';
+
+        const left = document.createElement('div');
+        left.className = 'col wrong';
+        left.textContent = wrongText;
+
+        const right = document.createElement('div');
+        right.className = 'col suggested';
+        right.textContent = suggestedText;
+
+        row.appendChild(left);
+        row.appendChild(right);
+        pairsListEl.appendChild(row);
+    });
+}
+
+/**
  * Update the prodigy image element's src based on currentSet & currentPage.
  * Also dispatches prodigyPairsChanged so any consumer can re-render the list.
  *
@@ -92,7 +148,9 @@ function updateProdigyImage(currentSet, currentPage) {
 
     if (!currentSet) {
         prodigyImageEl.src = '';
-        dispatchProdigyPairsChanged([]);
+        const empty = [];
+        dispatchProdigyPairsChanged(empty);
+        renderProdigyPairs(empty);
         console.info('updateProdigyImage: no currentSet provided — cleared image and pairs');
         return;
     }
@@ -108,6 +166,9 @@ function updateProdigyImage(currentSet, currentPage) {
     // Notify any UI that the pairs changed (or may be same but consumer can re-render)
     const pairs = getCurrentProdigyPairs(currentSet, currentPage);
     dispatchProdigyPairsChanged(pairs);
+
+    // Also render directly into the pairs list
+    renderProdigyPairs(pairs);
 }
 
 // Wire up the buttons to toggle selection and update the image

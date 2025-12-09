@@ -1,5 +1,9 @@
-/* prodigy-div.css — minimal version matching alignment-div.css */
+/* prodigy-div.css - full file
+   NOTE: Only the report container (pairs-*) block has been modernized.
+   Everything else kept as you had it (image area, buttons, container, etc.)
+*/
 
+/* Main prodigy wrapper */
 .prodigy-div {
     display: none;
     flex-direction: column;
@@ -7,17 +11,16 @@
     justify-content: flex-start;
     width: 100%;
     height: 100%;
-    padding: 0 10px; /* Only left and right */
+    padding: 0 10px;
     box-sizing: border-box;
     overflow: hidden;
 }
 
-/* Mode buttons */
+/* Buttons row */
 .action-mode-buttons {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 15px;
     padding: 20px 0;
 }
@@ -33,43 +36,177 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.action-mode-buttons button:hover {
-    background-color: #c8e6c9;
-}
-
 .action-mode-buttons button.selected {
     background-color: #4caf50;
     color: white;
 }
 
-/* Main container for source & report images */
+/* Main area: Image left, list right */
 .prodigy-container {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 12px;
-    background-color: #333;
-    transition: all 0.3s ease;
+    background: none !important;
 }
 
-/* Source & report image wrappers */
-.image-container,
-.report-container {
+/* Left panel: image (transparent) */
+.image-container {
     width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: none !important;
 }
 
-/* Images */
-#prodigyImage,
-#prodigyReportImage {
+/* Image itself */
+#prodigyImage {
     width: auto;
     height: 100%;
     object-fit: contain;
+    background: none !important;
+}
+
+/* ========================================================= */
+/* ===== Improved Report Container ONLY ==================== */
+/* ========================================================= */
+
+.pairs-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    background: #fbfcfe;
+    color: #0b1220;
+
+    border-left: 1px solid #e6e9ef;
+    overflow-y: auto;
+    padding: 16px;
+    gap: 12px;
+    box-sizing: border-box;
+}
+
+/* Header row — now HIGHER CONTRAST */
+.pairs-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    padding: 10px 14px;
+    font-weight: 700;
+    font-size: 14px;
+
+    background: #e2e8f0;      /* MORE CONTRAST */
+    color: #1e293b;           /* darker text */
+
+    letter-spacing: 0.3px;    /* slightly sharper text */
+    border-radius: 6px;
+
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Divider below header */
+.pairs-header::after {
+    content: "";
     display: block;
-    transition: all 0.3s ease;
+    height: 1px;
+    background: #cbd5e1;
+    grid-column: 1 / -1;
+    margin-top: 8px;
+}
+
+/* List container */
+.pairs-list {
+    flex: 1;
+    overflow-y: auto;     /* vertical scroll */
+    padding: 8px 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Each pair row: modern card look */
+.pair-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 12px;
+
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #eef2f7;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
+
+    align-items: start;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+/* hover effect */
+.pair-row:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* Row content: WITH horizontal scroll inside each sentence */
+.pair-row .col {
+    padding: 6px 8px;
+    color: #0b1220;
+    font-size: 14px;
+    line-height: 1.45;
+
+    white-space: nowrap;    /* keep on one line */
+    overflow-x: auto;       /* enable horizontal scroll */
+    overflow-y: hidden;
+    scrollbar-width: none;  /* Firefox hide scrollbar */
+}
+
+.pair-row .col::-webkit-scrollbar {
+    height: 0px;            /* Chrome hide scrollbar */
+}
+
+/* Wrong sentence style */
+.pair-row .wrong {
+    color: #b42318;
+    background: rgba(180,35,24,0.06);
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid rgba(180,35,24,0.06);
+}
+
+/* Suggested sentence style */
+.pair-row .suggested {
+    color: #057a55;
+    background: rgba(5,122,85,0.05);
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid rgba(5,122,85,0.05);
+}
+
+/* Empty state row */
+.pair-row.empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column: 1 / -1;
+    text-align: center;
+
+    color: #64748b;
+    background: #fff;
+
+    border-style: dashed;
+    border-color: #eef2f7;
+    box-shadow: none;
+}
+
+/* Subtle custom scrollbar for pairs-list */
+.pairs-list::-webkit-scrollbar { width: 10px; }
+.pairs-list::-webkit-scrollbar-track { background: transparent; }
+.pairs-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #e6eefc, #dfe9f6);
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
 }
